@@ -200,7 +200,7 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
 */
 function getFullNames(runners) {
   /* CODE HERE */
-  let runArr =[]
+  let runArr = []
   runners.forEach(runner => runArr.push(`${runner.last_name}, ${runner.first_name}`))
   return runArr
 }
@@ -235,7 +235,7 @@ function firstNamesAllCaps(runners) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(runners,tShirtSize) {
+function getRunnersByTShirtSize(runners, tShirtSize) {
   /* CODE HERE */
   let runnersOfSize = runners.filter((value) => value.shirt_size === tShirtSize)
   return runnersOfSize
@@ -255,7 +255,7 @@ function tallyUpDonations(runners) {
   /* CODE HERE */
   let totalD = [0]
   runners.forEach(runner => totalD.push(runner.donation))
-  let tally = totalD.reduce((total,num) => total += num)
+  let tally = totalD.reduce((total, num) => total += num)
   return tally
 }
 
@@ -277,10 +277,12 @@ function tallyUpDonations(runners) {
 */
 function counterMaker() {
   // BROKEN CODE STARTS
-  const count = 0;
+  let count = -1;
   function counter() {
     ++count
+    return count
   }
+  return counter
   // BROKEN CODE ENDS
 }
 
@@ -304,8 +306,18 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
+function counterMakerWithLimit(maxValue) {
   /* CODE HERE */
+  let count = -1;
+
+  function counter() {
+    ++count
+    if (count > 3) {
+      count = 0
+    }
+    return count
+  }
+  return counter
 }
 
 /////////////// END OF CHALLENGE ///////////////
